@@ -1,0 +1,486 @@
+﻿body {
+    background-image: url("../warriors_images/strength.jpg");
+            background-repeat: repeat;
+            background-position: center;
+            margin: 0px;
+            padding: 0px;
+            letter-spacing: 3px;
+            font-family: "Chinese Takeaway", "Acme";
+            font-size: large;
+            font-weight: 900;
+            cursor: url("bee.gif");
+            /*letter-spacing: .5px;*/
+}
+
+@font-face {
+    font-family: 'Chinese Takeaway';
+    src: url("../CHINESETAKEAWAY.ttf") format('truetype');
+}
+
+#wrapper {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+        #box-menu {
+            display: none;
+            font-size: 30px;
+            color: yellow;
+            text-align: center;
+            background: black;
+            border: 1px solid yellow;
+			border-radius: 5px;
+            margin: 10px;
+            padding: 0px;
+            width: 50px;
+            /*margin: 0px;
+            padding: 10px;*/
+            position: fixed;
+            z-index: 4;
+        }
+
+        .width1 {
+            width:200px;
+            transition: 1s ease-in;
+        }
+
+        .background-hide {
+            background-color: black;
+            opacity: .7;
+        }
+
+
+#sidebar {
+    position:fixed;
+    height:100%;
+    background: black;
+    width: 30%;
+    z-index:20;
+    display: none;
+    border-right: 2px solid yellow;
+}
+
+    #sidebar a {
+        background: black;
+        color:yellow;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px;
+        font-size: 30px;
+        display:block;
+        position: relative;
+        border-bottom: 2px solid yellow;
+    }
+
+    #sidebar a:hover {
+        background: #ffe66d;
+        color:black;
+    }
+
+    #sidebar a:first-child {
+        border-bottom: none;
+    }
+
+    #sidebar a:first-child:hover {
+        background: black;
+        color:yellow;
+    }
+                
+
+    /*#close-side {                 This rule overridden by above "#sidebar a" rule
+    font-size: 50px;
+    text-align: right;
+    margin:0px;
+    padding:0px;
+}*/
+        #banner  {
+            /*max-height:350px;*/
+            overflow:hidden;
+            position: relative;
+            padding: 0px;
+        }
+
+        #banner img {
+            display: block;                             /* <IMG> needs "display:block;" to center, otherwise it is IN-LINE */
+            margin: auto;
+            padding: 0px;
+            width: 100%;
+            /*clip-path: inset(0px 0px 0px 0px);*/
+        }
+
+        #bumble {
+            /*display: block;*/
+            position: absolute;
+            padding: 0px;
+            margin: 0;
+            font-family: "Chinese Takeaway", "Acme";
+            /*left: 50%;*/                                 /* LEFT + TRANSFORM: two things to center position:absolute elements */
+            /*transform: translateX(-50%);*/
+            width: 100%;
+            font-size: 15vh;                            /* font size change relative to viewport */
+            z-index: 100;
+            text-shadow: 10px 10px 10px black;
+            left: 60%; 
+            transform: translateX(-35%);
+        }
+
+        #bumble h1 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #navbar {
+            margin: 0px;
+            border-top: 1px solid yellow;
+            /*background: black;*/
+        }
+        
+        .menu  {
+            display:flex;
+            margin: 0px;
+            padding: 0px;
+            flex-wrap:wrap;                             /* wraps menu items when display width gets smaller */
+        }
+
+        /*ul li, ul li {
+            /*flex-grow: 100%;*/
+            /*display:flex;*/                           /* still need to specify display value because <li> by default is block*/
+            /*display:block;
+            background: black;                          /* if <a> was inside <li> then they line up inline?  YES! */
+            /*text-decoration: none;
+            color:yellow;
+            padding: 10px;
+        }*/
+
+
+        .menu.one li {                                  /* base reference width for list items */
+            text-align: center;
+            display:block;
+            background: black;
+            text-decoration: none;
+            flex-grow: 1;
+            position: relative;
+            border-bottom: 1px solid yellow;
+        }
+
+  
+        
+        /*.menu.one li:nth-of-type(1) {                             
+            background:red;
+            flex-grow:1;                                /* first list item (HOME) grows 3x bigger than others above */
+        /*}*/
+
+        .menu.one a:hover {
+            background: #ffe66d;
+            color:black;
+        }
+
+        .menu a {
+            position: relative;
+            text-decoration: none;
+            display:block;                              /*  still need to specify display value because <li> by default is block*/
+            background: black;                          /* if <a> was inside <li> then they line up inline?  YES! */
+            color:yellow;
+            padding: 10px;
+            font-size: 100%;
+            margin: 0px;
+        }
+
+            .menu.one a:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;                               /* top, bottom, and margin: auto used altogether to get vertical center */
+                bottom: 50%;
+                z-index: 40;
+                right: -1px;
+                margin: auto;
+                width: 2px;
+                height: 50%;
+                background: brown;
+            }
+
+
+        .menu.two {
+            justify-content:center;
+        }
+
+        .menu.two li {
+            text-decoration: none;
+            display:block;                              /*  still need to specify display value because <li> by default is block*/
+            background:black;                                            /* if <a> was inside <li> then they line up inline?  YES! */
+            color:yellow;
+            padding: 0px 5px 0px 5px;
+            text-align: center;
+            flex: 0 0 50px;                            /* flex grow=0, shrink=0, basis=50px */
+            border-bottom: 1px solid yellow;
+        }
+
+        .menu.two li:first-child {
+            border-radius: 0px 0px 0px 10px;
+            border-left: 1px solid yellow;
+        }
+        .menu.two li:last-child {
+            border-radius: 0px 0px 10px 0px;
+            border-right: 1px solid yellow;
+        }
+
+        .drop-content {
+            display:none;
+            position:absolute;
+            z-index: 10;
+            width: 100%;                                /* keeps "drop-content" same width as <li> */
+            background-color: black;
+        }
+
+        .drop-content a {
+            border-top: 1px solid yellow;
+            border-left: 1px solid yellow;
+            border-right: 1px solid yellow;
+        }
+
+        .drop-content a:last-child {
+            border-bottom: 1px solid yellow;
+        }
+
+        .side-content {
+            display:none;
+            /*position:absolute;*/
+            z-index: 10;
+            right: 0px;
+            width: 100%;                                /* keeps "drop-content" same width as <li> */
+            background-color: black;
+        }
+
+        .side-content a {
+            border-top: 1px solid yellow;
+            border-left: 1px solid yellow;
+            border-right: 1px solid yellow;
+        }
+
+        .side-content a:last-child {
+            border-bottom: 1px solid yellow;
+        }
+
+        /* ===================== CONTENT ==================== */
+        
+        #content {
+            height:1500px;
+        }
+
+        .video {
+            margin: 100px auto;
+            width: 50%;
+        }
+
+        .slide-gallery {
+            border-radius: 10px 10px 10px 10px;
+            width: 600px;
+            padding: 0px 50px 0px 50px;
+            height: 400px;
+            margin: 100px auto;
+            position: relative;                             /* need this for dots and prev/next button */
+            border: 8px solid #FBFFB9;
+            box-shadow: 5px 5px 5px #333;
+        }
+
+        .slide-gallery img  {
+            display: none;
+            margin:auto;
+            height: 100%;
+            width:auto;
+        }
+
+        .slide-gallery {
+            background-color:black;
+        }
+
+        .arrow {
+            color: white;
+            position: absolute;
+            padding: 0px 20px;
+            margin: 0px;
+            height: 100px;
+            line-height: 100px;
+            width: 20px;
+        }
+
+        .arrow.prev:hover {
+            background: black;
+            opacity: .5;
+            height: 100px;
+            line-height: 100px;
+            width: 20px;
+            border-radius: 0px 3px 3px 0px;
+        }
+        
+        .arrow.next:hover {
+            background: black;
+            opacity: .5;
+            height: 100px;
+            line-height: 100px;
+            width: 20px;
+            border-radius: 3px 0px 0px 3px;
+        }
+
+        .arrow.prev {
+            left: 0px;
+            top: 40%;
+            position: absolute; 
+        }
+
+        .arrow.next, .arrow:hover {
+            right: 0px;
+            top: 40%;
+            position: absolute;
+        }
+
+        .dot-selection {
+            bottom:0px;
+            position:absolute;
+            left: 50%;                                  /* LEFT + TRANSFORM: two things to center position:absolute elements */
+            transform: translateX(-50%);
+        }
+
+        .dot {
+            display: inline-block;                      /* need this line for some reason if .dot1-2-3 is empty, otherwise circle is deformed */
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            background-color: black;
+            opacity: .5;
+            padding:5px;
+            margin: 5px;      
+        }
+
+        #about {
+            margin: auto;
+            margin-top: 200px;
+            width: 70%;
+            height: auto;
+            background: #FBFFB9;
+            border-radius: 10px;
+            padding: 5px 5px 5px 5px;
+            border: 2px solid black;
+            border-left: 10px solid brown;
+            position:relative;
+            opacity: .9;
+            font-family: "Chinese Takeaway", "Acme";
+        }
+
+        .flex_container {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+        }
+
+        .checkbox {
+            width: 40px;
+            padding: 3px;
+        }
+
+        .description {
+            flex-grow: 100; 
+            padding: 3px 10px 3px 10px;
+        }
+
+        #concepts {
+            margin: auto;
+            margin-top: 100px;
+            width: 70%;
+            height: auto;
+            background: #FBFFB9;
+            border-radius: 10px;
+            padding: 5px 5px 5px 5px;
+            border: 2px solid black;
+            border-left: 10px solid brown;
+            position:relative;
+            opacity: .9;
+            font-family: "Chinese Takeaway", "Acme";
+        }
+
+        #space {
+            height: 122px;
+            width:120px;
+            float: left;
+        }
+
+        #profile-pic {
+            position:absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #FEFFEF;
+            border: 2px solid black;
+            top: -20px;
+            left:-40px;
+            z-index:1;
+        }
+
+        #contact, #faq, .coach, .player {
+            margin: 50px auto;
+            width: 60%;
+            height: auto;
+            background: #FBFFB9;
+            border-radius: 10px;
+            padding: 5px 5px 5px 20px;
+            border: 2px solid black;
+            border-left: 10px solid brown;
+            position:relative;
+            opacity: .9;
+        }
+		
+        #contact h1, #contact p {
+            text-align: center
+        }
+
+        #faq h1, #faq p {
+            padding-left: 80px;
+            text-align:left;
+        }
+        
+        .active-dot {
+            background: white;
+            opacity: 1;
+            /*display: block;*/
+        }
+
+        .active-tab {
+            background: #ffe66d !important; 
+            color: black !important;       
+        }
+
+        .noshow {
+            display:none !important;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+
+        #footer {
+            padding: 10px 0px 10px 0px;
+            width: 100%;
+            background: #FBFFB9;
+            text-align: center;
+            font-size: 30px;
+            border-top: 1px solid black;
+        }
+
+@media screen and (max-width: 600px) {
+            .menu a {
+            position: relative;
+            text-decoration: none;
+            display:block;                              /*  still need to specify display value because <li> by default is block*/
+            background: black;                          /* if <a> was inside <li> then they line up inline?  YES! */
+            color:blue;
+            padding: 10px;
+            font-size: 100%;
+            margin: 0px;
+        }
+    }        

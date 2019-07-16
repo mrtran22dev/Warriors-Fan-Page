@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Mike's Warriors Fan Page</title>
+
+    <link rel="stylesheet" type="text/css" href="warriors_css/css_style.css" />                     <!-- *** IMPORTANT!!! to view webpage locally - enable this line!-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Crafty+Girls|Indie+Flower|Pangolin|Special+Elite|Cabin+Sketch" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet"> 
+</head>
+<body onload="topScroll()">
+
+    <div id="box-menu" onclick="openSide()">&#9776;</div>
+    <div id="sidebar">
+        <a id="close-side" href="javascript:void(0)" onclick="closeSide()" style="padding:0px 10px;text-align:right;font-size:50px;line-height:30px;margin:0px;height:30px;">&times;</a>
+        <!--<a  id="close-side" onclick="closeSide()">&times;</a>-->
+        <a href="#" onclick="activeMenuTab(0)">HOME</a>
+        <a href="#about" onclick="activeMenuTab(1)">ABOUT WARRIORS</a>
+        <a href="warriors_subpages/gallery.html">GALLERY</a>                                          <!--onclick="activeMenuTab(2)"-->
+        <a onclick="servicesSide()">TEAM</a>                                                             <!--onclick="activeMenuTab(3)"-->
+        <div class="side-content">
+            <a href="warriors_subpages/coaches.html">COACHES</a>
+            <a href="warriors_subpages/players.html">PLAYERS</a>
+        </div>
+        <a href="warriors_subpages/faq.html">FAQ</a>                                                  <!--onclick="activeMenuTab(4)"-->
+        <a href="warriors_subpages/contact.html">CONTACT</a>                                          <!--onclick="activeMenuTab(7)"-->
+    </div>
+
+    <div id="wrapper">
+        
+        <div id="banner">
+            <img src="warriors_images/banner.jpg">
+        </div>
+
+        <div id="navbar">
+            <ul class="menu one">
+                <li id="home"><a href="#" onclick="activeMenuTab(0)">HOME</a></li>
+                <li><a href="#about" onclick="activeMenuTab(1)">ABOUT WARRIORS</a></li>
+                <li><a href="warriors_subpages/gallery.html">GALLERY</a></li>
+                <li>
+                    <a onclick="services()">TEAM</a>                                                     <!--onclick="activeMenuTab(3)"-->
+                    <div class="drop-content">
+                        <a href="warriors_subpages/coaches.html">COACHES</a>
+                        <a href="warriors_subpages/players.html">PLAYERS</a>
+                    </div>
+                </li>
+                <li><a href="warriors_subpages/faq.html">FAQ</a></li>                                    <!--onclick="activeMenuTab(4)"-->
+                <li><a href="warriors_subpages/contact.html">CONTACT</a></li>                             <!--onclick="activeMenuTab(7)"-->
+            </ul>
+
+            <ul class="menu two">
+                <li><a href="https://www.facebook.com/warriors/" target="_blank"><img src="warriors_images/facebook.png" style="height:30px" /></a></li>
+                <li><a href="https://www.instagram.com/warriors" target="_blank"><img src="warriors_images/ig.png" style="height:30px" /></a></li>
+                <li><a href="https://twitter.com/warriors" target="_blank"><img src="warriors_images/twitter.png" style="height:30px" /></a></li>
+                <li><a href="https://www.yelp.com/biz/golden-state-warriors-oakland" target="_blank"><img src="warriors_images/yelp.png" style="height:30px" /></a></li>
+            </ul>
+
+        </div>                                                                <!--flex this, social media links -->
+        <!--flex this-->
+
+        <div id="content">
+            <div class="slide-gallery">
+                <img class="image 0" src="warriors_images/champs1.jpg" />
+                <img class="image 1" src="warriors_images/champs2.jpg" />
+                <img class="image 2" src="warriors_images/champs3.jpg" />
+
+                <a class="arrow prev" onclick="prev(-1)">&#10094;</a>
+                <a class="arrow next" onclick="next(1)">&#10095;</a>
+
+                <div class="dot-selection">
+                    <a class="dot 1" onclick="slide(0)"></a>
+                    <a class="dot 2" onclick="slide(1)"></a>
+                    <a class="dot 3" onclick="slide(2)"></a>
+                </div>
+            </div>
+
+            <div id="about">
+                <div id="space">
+                </div><img id="profile-pic" src="warriors_images/warriors_classic.jpg" />
+                <p>The <span style="font-size:30px; color:blue;">Golden State Warriors</span> are an American professional basketball team based in <span style="font-size:30px; color:forestgreen;">Oakland, California</span>. The Warriors compete in the National Basketball Association (NBA) as a member of the league's Western Conference Pacific Division. The Warriors play their home games at the Oracle Arena in Oakland. The Warriors have reached ten NBA Finals, winning six NBA championships in 1947,[b] 1956, 1975, 2015, 2017, and 2018.</p>
+            </div>
+
+            <div id="concepts">
+                <p><p><span style="font-size:30px; color:blue; margin-bottom: 10px; text-decoration:underline;">Core concepts applied + features:</span></p>
+                    <div class='flex_container'>
+                        <div class=checkbox><img src="warriors_images/checkmark.png" style="height:40px;" /></div>
+                        <div class=description>HTML/CSS/Javascript fundamentals</div>
+                    </div>
+                    <div class='flex_container'>
+                        <div class=checkbox><img src="warriors_images/checkmark.png" style="height:40px;" /></div>
+                        <div class=description>DOM manipulation</div>
+                    </div>
+                    <div class='flex_container'>
+                        <div class=checkbox><img src="warriors_images/checkmark.png" style="height:40px;" /></div>
+                        <div class=description>Javascript for photo gallery auto-slide, dot/arrow-selection</div>
+                    </div>
+                    <div class='flex_container'>
+                        <div class=checkbox><img src="warriors_images/checkmark.png" style="height:40px;" /></div>
+                        <div class=description>Javascript Event Listener for hamburger/sidebar menu too appear after vertical page-scroll</div>
+                    </div>
+                    <div class='flex_container'>
+                        <div class=checkbox><img src="warriors_images/checkmark.png" style="height:40px;" /></div>
+                        <div class=description>Javascript for drop-down menu ('TEAM', sidebar/hamburger menu)</div>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <div id="footer">
+            <img src="warriors_images/threeflip.png" style="height:40px;" />
+            &copy; 2018 GO WARRIORS!
+            <img src="warriors_images/three.png" style="height:40px;" />
+        </div>
+    </div>
+
+    <script>
+        // global variables
+        var j = 0;                                                          // slide gallery pic counter;
+    </script>
+
+    <script src="warriors_js/openCloseSidebar.js"></script>
+    <script src="warriors_js/servicesSubMenu.js"></script>
+    <script src="warriors_js/slideGallery.js"></script>
+    <script src="warriors_js/topScroll.js"></script>
+
+    <script>
+        function activeMenuTab(tab) {
+            var mainTab = document.getElementsByClassName("menu one");
+            var sideTab = document.getElementById("sidebar");
+
+            var mainTag_li = mainTab[0].getElementsByTagName("li");
+            var mainTag_a = mainTag_li[tab].getElementsByTagName("a");
+            var mainActiveTab = mainTag_a[0];
+
+            var sideTag_a = sideTab.getElementsByTagName("a");
+            if (tab <= 4) {
+                var sideActiveTab = sideTag_a[tab + 1];
+            }
+
+            for (i = 0; i < mainTag_li.length; i++) {                         // clear all Main Menu tabs highlighted
+                mainTag_a = mainTag_li[i].getElementsByTagName("a");
+                for (j = 0; j < mainTag_a.length; j++) {
+                    mainTag_a[j].classList.remove("active-tab");
+                }
+            }
+
+            for (i = 0; i < sideTag_a.length; i++) {                         // clear all Side Menu tabs highlighted
+                sideTag_a[i].classList.remove("active-tab");
+            }
+
+            if (tab === 0) {                                            // HOME is NOT set active
+                // do nothing for HOME
+            } else if (tab === 1) {                                     // set ABOUT active
+                mainActiveTab.classList.add("active-tab");
+                sideActiveTab.classList.add("active-tab");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

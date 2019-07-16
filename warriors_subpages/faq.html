@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Mike's Warriors Fan Page</title>
+
+    <link rel="stylesheet" type="text/css" href="../warriors_css/css_style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Crafty+Girls|Indie+Flower" rel="stylesheet">
+
+</head>
+<body onload="topScroll(); setActiveTab()">
+
+    <div id="box-menu" onclick="openSide()">&#9776;</div>
+    <div id="sidebar">
+        <a id="close-side" href="javascript:void(0)" onclick="closeSide()" style="padding:0px 10px;text-align:right;font-size:50px;line-height:30px;margin:0px;height:30px;">&times;</a>
+        <!--<a  id="close-side" onclick="closeSide()">&times;</a>-->
+        <a href="../index.html">HOME</a>
+        <a href="../index.html#about">ABOUT WARRIORS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a onclick="servicesSide()">TEAM</a>
+        <div class="side-content">
+            <a href="coaches.html">COACHES</a>
+            <a href="players.html">PLAYERS</a>
+        </div>
+        <a href="#">FAQ</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <div id="wrapper">
+        <div id="banner"><img src="../warriors_images/banner.jpg"></div>
+
+        <div id="navbar">
+            <ul class="menu one">
+                <li id="home"><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#about">ABOUT WARRIORS</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li>
+                    <a onclick="services()">TEAM</a>
+                    <div class="drop-content">
+                        <a href="coaches.html">COACHES</a>
+                        <a href="players.html">PLAYERS</a>
+                    </div>
+                </li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+
+            <ul class="menu two">
+                <li><a href="https://www.facebook.com/warriors/" target="_blank"><img src="../warriors_images/facebook.png" style="height:30px" /></a></li>
+                <li><a href="https://www.instagram.com/warriors" target="_blank"><img src="../warriors_images/ig.png" style="height:30px" /></a></li>
+                <li><a href="https://twitter.com/warriors" target="_blank"><img src="../warriors_images/twitter.png" style="height:30px" /></a></li>
+                <li><a href="https://www.yelp.com/biz/golden-state-warriors-oakland" target="_blank"><img src="../warriors_images/yelp.png" style="height:30px" /></a></li>
+            </ul>
+
+        </div>                                                                <!--flex this, social media links -->
+        <!--flex this-->
+
+        <div id="content">
+            <div id="faq">
+                <h1><span style="color:blue;">1)</span> Why is Steph & Klay called the Splash Brothers?</h1>
+                <p>They're known to make it rain with 3-pointers!</p>
+                <h1><span style="color:blue;">2)</span> How long was the Warriors longest championship title drought?</h1>
+                <p>40 dry years!</p>
+                <h1><span style="color:blue;">3)</span> Who is this guy Jerry West with the Warriors?</h1>
+                <p>He is the legendary 'Mr. NBA logo' and also hired as an executive board member of the Warriors</p>
+            </div>
+        </div>
+
+
+        <div id="footer">
+            <img src="../warriors_images/threeflip.png" style="height:40px;" />
+            &copy; 2018 GO WARRIORS!
+            <img src="../warriors_images/three.png" style="height:40px;" />
+        </div>
+    </div>
+
+    <script src="../warriors_js/openCloseSidebar.js"></script>
+    <script src="../warriors_js/servicesSubMenu.js"></script>
+    <script src="../warriors_js/topScroll.js"></script>
+
+
+    <script>
+        function setActiveTab() {
+            var mainTab = document.getElementsByClassName("menu one");
+            var mainTag_li = mainTab[0].getElementsByTagName("li");
+            var mainTag_a = mainTag_li[4].getElementsByTagName("a");
+            var mainActiveTab = mainTag_a[0];
+            var sideTab = document.getElementById("sidebar");
+
+            var sideTag_a = sideTab.getElementsByTagName("a");
+            var sideActiveTab = sideTag_a[7];
+
+            for (i = 0; i < mainTag_li.length; i++) {                         // clear all Main Menu tabs highlighted
+                mainTag_a = mainTag_li[i].getElementsByTagName("a");
+                for (j = 0; j < mainTag_a.length; j++) {
+                    mainTag_a[j].classList.remove("active-tab");
+                }
+            }
+
+            for (i = 0; i < sideTag_a.length; i++) {                         // clear all Side Menu tabs highlighted
+                sideTag_a[i].classList.remove("active-tab");
+            }
+
+            sideActiveTab.classList.add("active-tab");
+            mainActiveTab.classList.add("active-tab");
+        }
+    </script>
+
+
+</body>
+</html>
